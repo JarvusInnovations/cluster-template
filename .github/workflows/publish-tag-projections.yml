@@ -31,6 +31,13 @@ jobs:
       with:
         holobranch: k8s-blueprint-lke
         commit-to: k8s/blueprint/lke
+        commit-to: k8s/blueprint/aks
+
+    - name: 'Update holobranch: k8s/blueprint/doks'
+      uses: JarvusInnovations/hologit@actions/projector/v1
+      with:
+        holobranch: k8s-blueprint-doks
+        commit-to: k8s/blueprint/doks
 
     - name: 'Update holobranch: k8s/manifests/common'
       uses: JarvusInnovations/hologit@actions/projector/v1
@@ -49,3 +56,10 @@ jobs:
       with:
         holobranch: k8s-manifests-lke
         commit-to: k8s/manifests/lke
+        commit-to: k8s/manifests/aks
+
+    - name: 'Update holobranch: k8s/manifests/doks'
+      uses: JarvusInnovations/hologit@actions/projector/v1
+      with:
+        holobranch: k8s-manifests-doks
+        commit-to: k8s/manifests/doks

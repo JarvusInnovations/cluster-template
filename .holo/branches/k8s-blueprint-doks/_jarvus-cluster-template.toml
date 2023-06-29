@@ -1,0 +1,3 @@
+[holomapping]
+root = "k8s-doks"
+files = "**"

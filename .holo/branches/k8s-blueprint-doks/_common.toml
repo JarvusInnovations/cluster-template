@@ -1,0 +1,4 @@
+[holomapping]
+before = "*"
+holosource = "jarvus-cluster-template=>k8s-blueprint"
+files = "**"

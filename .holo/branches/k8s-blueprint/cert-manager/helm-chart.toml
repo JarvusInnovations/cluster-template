@@ -1,7 +1,3 @@
 [holomapping]
-holosource = "cert-manager"
-root = "deploy/charts/cert-manager"
-files = [
-    "**",
-    "!**/BUILD.bazel"
-]
+holosource = "jarvus-cluster-template=>helm-charts/cert-manager"
+files = "**"

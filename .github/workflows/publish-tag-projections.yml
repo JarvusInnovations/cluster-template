@@ -55,7 +55,6 @@ jobs:
       with:
         holobranch: k8s-manifests-lke
         commit-to: k8s/manifests/lke
-        commit-to: k8s/manifests/aks
 
     - name: 'Update holobranch: k8s/manifests/doks'
       uses: JarvusInnovations/hologit@actions/projector/v1

@@ -1,0 +1,7 @@
+[holomapping]
+holosource = "cert-manager"
+root = "deploy/charts/cert-manager"
+files = [
+    "**",
+    "!**/BUILD.bazel"
+]

@@ -2,7 +2,6 @@
 
 [hololens]
 package = "holo/lens-shell/1.0"
-before = "cert-manager"
 
 [hololens.shell]
 script = '''
@@ -11,7 +10,6 @@ mv -v Chart.template.yaml Chart.yaml
 '''
 
 [hololens.input]
-root = "cert-manager/helm-chart"
 files = "**"
 
 [hololens.output]

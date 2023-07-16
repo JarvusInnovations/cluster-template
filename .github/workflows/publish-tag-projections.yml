@@ -31,7 +31,6 @@ jobs:
       with:
         holobranch: k8s-blueprint-lke
         commit-to: k8s/blueprint/lke
-        commit-to: k8s/blueprint/aks
 
     - name: 'Update holobranch: k8s/blueprint/doks'
       uses: JarvusInnovations/hologit@actions/projector/v1

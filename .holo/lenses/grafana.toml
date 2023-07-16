@@ -1,0 +1,21 @@
+[hololens]
+package = "holo/lens-helm3/1.22"
+before = "k8s-normalize"
+
+[hololens.input]
+root = "grafana"
+files = "**"
+
+[hololens.output]
+merge = "replace"
+
+[hololens.helm]
+namespace = "grafana"
+release_name = "grafana"
+
+chart_path = "helm-chart"
+value_files = [
+    "default-values.yaml",
+    "provider-values.yaml",
+    "release-values.yaml"
+]

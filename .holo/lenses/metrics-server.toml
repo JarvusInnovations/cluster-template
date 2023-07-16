@@ -1,0 +1,12 @@
+[hololens]
+package = "holo/lens-kustomize/1.0"
+
+[hololens.kustomize]
+directory = "release"
+
+[hololens.input]
+root = "metrics-server"
+files = "**"
+
+[hololens.output]
+merge = "replace"

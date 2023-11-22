@@ -78,11 +78,13 @@ jobs:
         echo
         echo "Looking for existing open PR for branch ${BRANCH_RELEASE}..."
         _existing_pr_number=$(
-            gh pr view "${BRANCH_RELEASE}" \
-                --json number,state \
-                --template '{{.number}}{{"\t"}}{{.state}}' \
-            | grep OPEN \
-            | awk '{print $1}'
+            gh pr list \
+                --head "${BRANCH_RELEASE}" \
+                --base "${BRANCH_DEPLOY}" \
+                --state open \
+                --limit 1 \
+                --json number \
+                --jq '.[0].number'
         )
 
         if [ -n "${_existing_pr_number}" ]; then

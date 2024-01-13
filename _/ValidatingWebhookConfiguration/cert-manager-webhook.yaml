@@ -29,10 +29,6 @@ webhooks:
           operator: NotIn
           values:
             - 'true'
-        - key: name
-          operator: NotIn
-          values:
-            - cert-manager
         - key: control-plane
           operator: DoesNotExist
     rules:

@@ -12,6 +12,7 @@ merge = "replace"
 [hololens.helm]
 namespace = "loki"
 release_name = "loki"
+namespace_fill = true
 
 chart_path = "helm-chart"
 value_files = [

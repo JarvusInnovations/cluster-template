@@ -1,2 +1,2 @@
 # These values as applied last as downstream overrides
-# See https://github.com/grafana/helm-charts/blob/main/charts/loki/values.yaml
+# See https://github.com/grafana/loki/blob/main/production/helm/loki/values.yaml

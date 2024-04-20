@@ -23,7 +23,7 @@ spec:
         app: hairpin-proxy-haproxy
     spec:
       containers:
-        - image: compumike/hairpin-proxy-haproxy:0.2.1
+        - image: ghcr.io/jarvusinnovations/hairpin-proxy/haproxy:0.3.0
           name: main
           resources:
             requests:
@@ -106,6 +106,8 @@ rules:
       - configmaps
     resourceNames:
       - coredns
+      - coredns-base
+      - coredns-custom
     verbs:
       - get
       - watch
@@ -151,7 +153,12 @@ spec:
         runAsUser: 405
         runAsGroup: 65533
       containers:
-        - image: compumike/hairpin-proxy-controller:0.2.1
+        - image: ghcr.io/jarvusinnovations/hairpin-proxy/controller:0.3.0
+          env:
+          - name: COREDNS_CONFIGMAP_NAME
+            value: "coredns-custom"
+          - name: COREDNS_IMPORT_CONFIG
+            value: "true"
           name: main
           resources:
             requests:
@@ -160,3 +167,13 @@ spec:
             limits:
               memory: "100Mi"
               cpu: "50m"
+
+---
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: coredns-custom
+  namespace: kube-system
+data:
+  hairpinproxy.include: ""

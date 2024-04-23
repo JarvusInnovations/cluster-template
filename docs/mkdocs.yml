@@ -17,9 +17,6 @@ plugins:
 extra_javascript:
   - https://unpkg.com/mermaid@8.5.0/dist/mermaid.min.js
 
-extra_css:
-  - https://use.fontawesome.com/releases/v5.13.0/css/all.css
-
 markdown_extensions:
   - admonition
   - codehilite:
@@ -39,7 +36,6 @@ markdown_extensions:
       # insert a blank space before the character
       permalink: " ¶"
   - smarty
-  - fontawesome_markdown
 
 extra:
   cluster:

@@ -1,7 +1,8 @@
 [holomapping]
 holosource = "loki"
-root = "charts/loki"
+root = "production/helm/loki"
 files = [
-  "**",
-  "!templates/tests/**"
+  "*.yaml",
+  "src/**",
+  "templates/**"
 ]

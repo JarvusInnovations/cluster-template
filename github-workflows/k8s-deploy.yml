@@ -50,19 +50,6 @@ jobs:
           ) | tee -a /tmp/kube.log
         fi
 
-    - name: 'Apply manifests: namespaced resources'
-      run: |
-        (
-          find . \
-            -maxdepth 1 \
-            -type d \
-            -not -name '_' \
-            -not -name '.*' \
-            -print0 \
-          | sort -z \
-          | xargs -r0 -n 1 kubectl apply -Rf
-        ) | tee -a /tmp/kube.log
-
     - name: 'Apply manifests: generated regcred secrets'
       run: |
 
@@ -80,6 +67,19 @@ jobs:
           .dockerconfigjson: ${{ secrets.DOCKER_CONFIG_BASE64 }}
         EOF
         done <<< "$(find . -maxdepth 1 -type d -not -name '_' -not -name '.*')"
+
+    - name: 'Apply manifests: namespaced resources'
+      run: |
+        (
+          find . \
+            -maxdepth 1 \
+            -type d \
+            -not -name '_' \
+            -not -name '.*' \
+            -print0 \
+          | sort -z \
+          | xargs -r0 -n 1 kubectl apply -Rf
+        ) | tee -a /tmp/kube.log
 
     - name: 'Apply manifests: deleted resources'
       run: |

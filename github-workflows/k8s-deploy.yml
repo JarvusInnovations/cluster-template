@@ -39,6 +39,7 @@ jobs:
           # Filter and append errors with context if meaningful
           filtered_errors=$(echo "$dir_errors" | \
                             grep -v "Warning: Use tokens from the TokenRequest API" | \
+                            grep -v "^Error: exit status [0-9]*$" | \
                             grep -v "^[[:space:]]*$" || true)
 
           if [ -n "$filtered_errors" ] && echo "$filtered_errors" | grep -q '[^[:space:]]' 2>/dev/null; then
@@ -65,6 +66,7 @@ jobs:
               # Filter and append errors with context if meaningful
               filtered_errors=$(echo "$dir_errors" | \
                                 grep -v "Warning: Use tokens from the TokenRequest API" | \
+                                grep -v "^Error: exit status [0-9]*$" | \
                                 grep -v "^[[:space:]]*$" || true)
 
               if [ -n "$filtered_errors" ] && echo "$filtered_errors" | grep -q '[^[:space:]]' 2>/dev/null; then
@@ -97,6 +99,7 @@ jobs:
           # Filter and append errors with context if meaningful
           filtered_errors=$(echo "$secret_errors" | \
                             grep -v "Warning: Use tokens from the TokenRequest API" | \
+                            grep -v "^Error: exit status [0-9]*$" | \
                             grep -v "^[[:space:]]*$" || true)
 
           if [ -n "$filtered_errors" ] && echo "$filtered_errors" | grep -q '[^[:space:]]' 2>/dev/null; then
@@ -122,6 +125,7 @@ jobs:
             # Filter and append errors with context if meaningful
             filtered_errors=$(echo "$dir_errors" | \
                               grep -v "Warning: Use tokens from the TokenRequest API" | \
+                              grep -v "^Error: exit status [0-9]*$" | \
                               grep -v "^[[:space:]]*$" || true)
 
             if [ -n "$filtered_errors" ] && echo "$filtered_errors" | grep -q '[^[:space:]]' 2>/dev/null; then
@@ -150,6 +154,7 @@ jobs:
           # Filter and append errors with context if meaningful
           filtered_errors=$(echo "$delete_errors" | \
                             grep -v "Warning: Use tokens from the TokenRequest API" | \
+                            grep -v "^Error: exit status [0-9]*$" | \
                             grep -v "^[[:space:]]*$" || true)
 
           if [ -n "$filtered_errors" ] && echo "$filtered_errors" | grep -q '[^[:space:]]' 2>/dev/null; then

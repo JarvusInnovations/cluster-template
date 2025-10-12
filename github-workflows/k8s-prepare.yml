@@ -48,9 +48,10 @@ jobs:
             # Run kubectl diff: stdout to file, capture stderr in variable
             dir_errors=$(kubectl diff -Rf "$dir" 2>&1 1>>/tmp/kube.diff || true)
 
-            # Filter out known warnings and blank lines
+            # Filter out known warnings, exit status messages, and blank lines
             filtered_errors=$(echo "$dir_errors" | \
                               grep -v "Warning: Use tokens from the TokenRequest API" | \
+                              grep -v "^Error: exit status [0-9]*$" | \
                               grep -v "^[[:space:]]*$" || true)
 
             # If there are meaningful errors, append with prefix

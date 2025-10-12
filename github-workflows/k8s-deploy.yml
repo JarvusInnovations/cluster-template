@@ -114,14 +114,18 @@ jobs:
         EOF
         )"
 
-        # Conditionally append error output if not empty
-        if [ -s /tmp/kube.err ]; then
+        # Filter error log to remove known warnings and blank lines
+        grep -v "Warning: Use tokens from the TokenRequest API" /tmp/kube.err | \
+        grep -v "^[[:space:]]*$" > /tmp/kube.err.filtered || true
+
+        # Conditionally append error output if it has meaningful content
+        if [ -s /tmp/kube.err.filtered ] && grep -q '[^[:space:]]' /tmp/kube.err.filtered 2>/dev/null; then
             comment_body="${comment_body}
 
         ## Errors/Warnings
 
         \`\`\`
-        $(cat /tmp/kube.err)
+        $(cat /tmp/kube.err.filtered)
         \`\`\`"
         fi
 

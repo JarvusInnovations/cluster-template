@@ -2,7 +2,7 @@
 # Add configuration that AKS adds automatically to quiet diffs
 
 [hololens]
-package = "holo/lens-k8s-patch/1.1"
+container = "ghcr.io/hologit/lenses/k8s-patch:latest"
 after = "cert-manager"
 
 [hololens.k8s-patch]

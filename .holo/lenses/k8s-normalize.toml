@@ -1,5 +1,5 @@
 [hololens]
-package = "holo/lens-k8s-normalize/1.3"
+container = "ghcr.io/hologit/lenses/k8s-normalize:latest"
 after = "*"
 
 [hololens.input]

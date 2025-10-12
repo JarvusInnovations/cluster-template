@@ -41,7 +41,7 @@ jobs:
             -print0 \
           | sort -z \
           | xargs -r0 -n 1 kubectl diff -Rf || true
-        ) > /tmp/kube.diff
+        ) > /tmp/kube.diff 2> /tmp/kube.err
 
     - name: Create/update pull request
       env:
@@ -62,6 +62,17 @@ jobs:
         \`\`\`
         EOF
         )"
+
+        # Conditionally append error output if not empty
+        if [ -s /tmp/kube.err ]; then
+            pr_body="${pr_body}
+
+        ## Errors/Warnings
+
+        \`\`\`
+        $(cat /tmp/kube.err)
+        \`\`\`"
+        fi
 
 
         ## generate initial commit for base if needed

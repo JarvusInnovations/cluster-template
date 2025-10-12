@@ -28,11 +28,12 @@ jobs:
 
         # initialize empty log of kube operations
         echo -n '' > /tmp/kube.log
+        echo -n '' > /tmp/kube.err
 
     - name: 'Apply manifests: CRD resources'
       run: |
         if [ -d ./_/CustomResourceDefinition ]; then
-          kubectl apply -Rf ./_/CustomResourceDefinition | tee -a /tmp/kube.log
+          kubectl apply -Rf ./_/CustomResourceDefinition 2> >(tee -a /tmp/kube.err >&2) | tee -a /tmp/kube.log
         fi
 
     - name: 'Apply manifests: non-CRD global resources'
@@ -47,7 +48,7 @@ jobs:
               -print0 \
             | sort -z \
             | xargs -r0 -n 1 kubectl apply -Rf
-          ) | tee -a /tmp/kube.log
+          ) 2> >(tee -a /tmp/kube.err >&2) | tee -a /tmp/kube.log
         fi
 
     - name: 'Apply manifests: generated regcred secrets'
@@ -56,7 +57,7 @@ jobs:
         # apply a copy of regcred secret for every deployed namespace
         while IFS= read -r namespace; do
           namespace="$(basename "${namespace}")"
-          cat <<EOF | kubectl apply -f - | tee -a /tmp/kube.log
+          cat <<EOF | kubectl apply -f - 2> >(tee -a /tmp/kube.err >&2) | tee -a /tmp/kube.log
         apiVersion: v1
         kind: Secret
         metadata:
@@ -79,7 +80,7 @@ jobs:
             -print0 \
           | sort -z \
           | xargs -r0 -n 1 kubectl apply -Rf
-        ) | tee -a /tmp/kube.log
+        ) 2> >(tee -a /tmp/kube.err >&2) | tee -a /tmp/kube.log
 
     - name: 'Apply manifests: deleted resources'
       run: |
@@ -91,9 +92,9 @@ jobs:
           name="${kind_name##*/}"
 
           if [ "${namespace}" == "_" ]; then
-            kubectl delete $kind $name | tee -a /tmp/kube.log
+            kubectl delete $kind $name 2> >(tee -a /tmp/kube.err >&2) | tee -a /tmp/kube.log
           else
-            kubectl -n $namespace delete $kind $name | tee -a /tmp/kube.log
+            kubectl -n $namespace delete $kind $name 2> >(tee -a /tmp/kube.err >&2) | tee -a /tmp/kube.log
           fi
         done
 
@@ -112,6 +113,17 @@ jobs:
         \`\`\`
         EOF
         )"
+
+        # Conditionally append error output if not empty
+        if [ -s /tmp/kube.err ]; then
+            comment_body="${comment_body}
+
+        ## Errors/Warnings
+
+        \`\`\`
+        $(cat /tmp/kube.err)
+        \`\`\`"
+        fi
 
 
         ## get most recent merged PR

@@ -1,5 +1,5 @@
 [hololens]
-package = "holo/lens-mkdocs/1.2"
+container = "ghcr.io/hologit/lenses/mkdocs:latest"
 
 [hololens.output]
 merge = "replace"

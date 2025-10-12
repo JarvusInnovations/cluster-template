@@ -1,7 +1,7 @@
 # See https://www.linode.com/community/questions/19756/how-can-i-deploy-the-kubernetes-metrics-server-on-lke
 
 [hololens]
-package = "holo/lens-k8s-patch/1.0"
+container = "ghcr.io/hologit/lenses/k8s-patch:latest"
 after = "metrics-server"
 
 [hololens.k8s-patch]

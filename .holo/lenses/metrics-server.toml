@@ -1,5 +1,5 @@
 [hololens]
-package = "holo/lens-kustomize/1.0"
+container = "ghcr.io/hologit/lenses/kustomize:latest"
 
 [hololens.kustomize]
 directory = "release"

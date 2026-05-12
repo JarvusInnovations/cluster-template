@@ -4,7 +4,7 @@ container = "ghcr.io/hologit/lenses/shell:latest"
 [hololens.shell]
 # Strip bazel templating in a bootleg fashion
 script = '''
-sed -i'' -E 's/^(appVersion|version):.*/\1: v1.10.1/g' Chart.template.yaml
+sed -i'' -E 's/^(appVersion|version):.*/\1: v1.20.2/g' Chart.template.yaml
 mv -v Chart.template.yaml Chart.yaml
 '''
 

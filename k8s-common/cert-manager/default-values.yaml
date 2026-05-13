@@ -18,3 +18,9 @@ startupapicheck:
 # the Gateway API CRDs aren't installed — cert-manager just skips the watch.
 config:
   enableGatewayAPI: true
+  # Enable ListenerSet support (alpha in cert-manager 1.20). Lets cert-manager
+  # issue Certificates for TLS terminations declared on Gateway API
+  # ListenerSet resources, which is the per-project cert pattern that
+  # downstream clusters use with Envoy Gateway.
+  featureGates:
+    ListenerSet: true

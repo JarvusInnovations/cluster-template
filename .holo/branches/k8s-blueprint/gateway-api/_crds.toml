@@ -1,0 +1,4 @@
+[holomapping]
+holosource = "gateway-api"
+root = "config/crd/standard"
+files = "gateway.networking.k8s.io_*.yaml"

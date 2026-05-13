@@ -1,0 +1,22 @@
+[hololens]
+container = "ghcr.io/hologit/lenses/shell:latest"
+
+[hololens.shell]
+# Envoy Gateway's chart ships values as a release-time template (values.tmpl.yaml
+# with shell-style ${...} placeholders) and Chart.yaml with v0.0.0-latest placeholders.
+# Substitute them here so the chart is helm-template-ready.
+script = '''
+sed -i'' \
+    -e 's|\${GatewayImage}|docker.io/envoyproxy/gateway:v1.7.3|g' \
+    -e 's|\${GatewayImagePullPolicy}|IfNotPresent|g' \
+    values.tmpl.yaml
+mv -v values.tmpl.yaml values.yaml
+
+sed -i'' -E 's/^(version|appVersion):.*/\1: v1.7.3/g' Chart.yaml
+'''
+
+[hololens.input]
+files = "**"
+
+[hololens.output]
+merge = "replace"

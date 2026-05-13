@@ -11,3 +11,10 @@ resources:
 
 startupapicheck:
   enabled: false
+
+# Enable Gateway API integration. Cert-manager picks up `cert-manager.io/*`
+# annotations on Gateway and ListenerSet resources and issues Certificates for
+# their TLS terminations, the same way it does for Ingress. Safe even when
+# the Gateway API CRDs aren't installed — cert-manager just skips the watch.
+config:
+  enableGatewayAPI: true

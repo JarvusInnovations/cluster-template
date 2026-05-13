@@ -1,4 +1,13 @@
 # These values as applied first as template-provided defaults
 
+# Keep the deployment name as "cert-manager" instead of the helm-default
+# "cert-manager-cert-manager" so resource names stay stable across upgrades.
+fullnameOverride: cert-manager
+
+resources:
+  requests:
+    cpu: 10m
+    memory: 32Mi
+
 startupapicheck:
   enabled: false

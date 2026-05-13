@@ -7,7 +7,6 @@ release_name = "cert-manager"
 
 chart_path = "helm-chart"
 value_files = [
-    "helm-values.yaml",
     "default-values.yaml",
     "provider-values.yaml",
     "release-values.yaml"

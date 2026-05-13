@@ -1,0 +1,3 @@
+[holomapping]
+holosource = "jarvus-cluster-template=>helm-charts/envoy-gateway"
+files = "**"

@@ -11,3 +11,16 @@ resources:
 
 startupapicheck:
   enabled: false
+
+# Enable Gateway API integration. Cert-manager picks up `cert-manager.io/*`
+# annotations on Gateway and ListenerSet resources and issues Certificates for
+# their TLS terminations, the same way it does for Ingress. Safe even when
+# the Gateway API CRDs aren't installed — cert-manager just skips the watch.
+config:
+  enableGatewayAPI: true
+  # Enable ListenerSet support (alpha in cert-manager 1.20). Lets cert-manager
+  # issue Certificates for TLS terminations declared on Gateway API
+  # ListenerSet resources, which is the per-project cert pattern that
+  # downstream clusters use with Envoy Gateway.
+  featureGates:
+    ListenerSet: true

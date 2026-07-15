@@ -21,7 +21,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: 610df8293f49c8cb0d6ff71692b816e7f3d9b955eb4c46c5a374ee59ca7cc853
+        checksum/config: d7998ee5323891db1cbf4f20a5fe2ea6c0ef86cada9b8350d54c95e99a6f5cb7
         checksum/dashboards-json-config: 4f1a6849aba728c6f66b9b27a78f020f7f74b2cb327597cec42eedc8ab62986a
         checksum/sc-dashboard-provider-config: 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b
       labels:
@@ -49,6 +49,30 @@ spec:
               value: /var/lib/grafana/plugins
             - name: GF_PATHS_PROVISIONING
               value: /etc/grafana/provisioning
+            - name: ALERT_EMAIL_TO
+              valueFrom:
+                secretKeyRef:
+                  key: recipients
+                  name: grafana-smtp
+                  optional: true
+            - name: GF_SMTP_FROM_ADDRESS
+              valueFrom:
+                secretKeyRef:
+                  key: from-address
+                  name: grafana-smtp
+                  optional: true
+            - name: GF_SMTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: password
+                  name: grafana-smtp
+                  optional: true
+            - name: GF_SMTP_USER
+              valueFrom:
+                secretKeyRef:
+                  key: user
+                  name: grafana-smtp
+                  optional: true
           image: grafana/grafana:9.2.5
           imagePullPolicy: IfNotPresent
           livenessProbe:
@@ -76,6 +100,15 @@ spec:
             - mountPath: /etc/grafana/provisioning/datasources/datasources.yaml
               name: config
               subPath: datasources.yaml
+            - mountPath: /etc/grafana/provisioning/alerting/contactpoints.yaml
+              name: config
+              subPath: contactpoints.yaml
+            - mountPath: /etc/grafana/provisioning/alerting/policies.yaml
+              name: config
+              subPath: policies.yaml
+            - mountPath: /etc/grafana/provisioning/alerting/rules.yaml
+              name: config
+              subPath: rules.yaml
             - mountPath: /etc/grafana/provisioning/dashboards/dashboardproviders.yaml
               name: config
               subPath: dashboardproviders.yaml

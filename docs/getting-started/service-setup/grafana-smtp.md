@@ -26,10 +26,13 @@ keeps them out of a public repo.
 | `user` | Postmark **server token** |
 | `password` | the **same** Postmark server token |
 | `from-address` | a verified Postmark sender for this cluster (e.g. `alerts@example.org`) |
+| `from-name` | the sender name shown in alert emails — **name the cluster** so its origin is obvious at a glance, e.g. `CodeForPhilly — Live` |
 | `recipients` | semicolon-separated list, e.g. `a@example.org;b@example.org` |
 
 The `from-address` must be a verified sender signature (or under a verified domain) in the
-Postmark server, or Postmark rejects the mail.
+Postmark server, or Postmark rejects the mail. Set `from-name` distinctly per cluster —
+when several clusters share one Postmark server and email the same people, it's the only
+thing in the inbox that says which cluster fired.
 
 ## Create it
 
@@ -43,6 +46,7 @@ kubectl create secret generic grafana-smtp \
     --from-literal=user="$TOKEN" \
     --from-literal=password="$TOKEN" \
     --from-literal=from-address='alerts@example.org' \
+    --from-literal=from-name='CodeForPhilly — Live' \
     --from-literal=recipients='a@example.org;b@example.org' \
   | kubeseal --format yaml \
       --controller-namespace sealed-secrets --controller-name sealed-secrets \

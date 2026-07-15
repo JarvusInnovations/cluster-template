@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jarvusinnovations.github.io/cluster-template/getting-started/service-setup/sealed-secrets/">
+        <link rel="canonical" href="https://jarvusinnovations.github.io/cluster-template/development/features/gateway/">
       
       
-        <link rel="prev" href="../grafana/">
+        <link rel="prev" href="../../">
       
       
-        <link rel="next" href="../../../development/">
+        <link rel="next" href="../ingress/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Sealed Secrets - Cluster Template</title>
+        <title>Exposing services (Gateway API) - Cluster Template</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sealed-secrets" class="md-skip">
+        <a href="#exposing-services-gateway-api" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Sealed Secrets
+              Exposing services (Gateway API)
             
           </span>
         </div>
@@ -210,13 +210,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/" class="md-tabs__link">
           
   
   
@@ -232,11 +230,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../development/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   
@@ -344,6 +344,233 @@
       
   
   
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service setup
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Service setup
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/service-setup/grafana-smtp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana SMTP &amp; certificate alerting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/service-setup/grafana/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Grafana
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/service-setup/sealed-secrets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sealed Secrets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -363,17 +590,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    Getting started
+    Development
   
 
     
@@ -384,12 +611,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Getting started
+    Development
   
 
           </label>
@@ -409,7 +636,7 @@
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Development
   
 
     
@@ -443,17 +670,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Service setup
+    Features
   
 
     
@@ -464,72 +691,16 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Service setup
+    Features
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../grafana-smtp/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Grafana SMTP &amp; certificate alerting
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../grafana/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Grafana
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -554,7 +725,7 @@
   <span class="md-ellipsis">
     
   
-    Sealed Secrets
+    Exposing services (Gateway API)
   
 
     
@@ -572,7 +743,7 @@
   <span class="md-ellipsis">
     
   
-    Sealed Secrets
+    Exposing services (Gateway API)
   
 
     
@@ -598,10 +769,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#back-up-generated-keys" class="md-nav__link">
+  <a href="#exposing-a-service" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Back up generated keys
+        Exposing a service
       
     </span>
   </a>
@@ -609,10 +780,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#expose-the-public-certificate" class="md-nav__link">
+  <a href="#http-https-and-certificates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Expose the public certificate
+        HTTP, HTTPS, and certificates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failure modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legacy-ingress-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy: ingress-nginx
       
     </span>
   </a>
@@ -628,71 +821,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Development
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Development
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -700,113 +828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Development
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Features
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Features
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../development/features/gateway/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Exposing services (Gateway API)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../development/features/ingress/" class="md-nav__link">
+      <a href="../ingress/" class="md-nav__link">
         
   
   
@@ -834,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/features/sealed-secrets/" class="md-nav__link">
+      <a href="../sealed-secrets/" class="md-nav__link">
         
   
   
@@ -1096,10 +1118,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#back-up-generated-keys" class="md-nav__link">
+  <a href="#exposing-a-service" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Back up generated keys
+        Exposing a service
       
     </span>
   </a>
@@ -1107,10 +1129,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#expose-the-public-certificate" class="md-nav__link">
+  <a href="#http-https-and-certificates" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Expose the public certificate
+        HTTP, HTTPS, and certificates
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#failure-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failure modes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#legacy-ingress-nginx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy: ingress-nginx
       
     </span>
   </a>
@@ -1137,34 +1181,47 @@
   
 
 
-<h1 id="sealed-secrets">Sealed Secrets<a class="headerlink" href="#sealed-secrets" title="Permanent link"> ¶</a></h1>
-<p>The <a href="https://github.com/bitnami-labs/sealed-secrets">sealed-secrets</a> controller will automatically generate a public+private keypair for each cluster that will be used to encrypt and decrypt secrets.</p>
-<p>After any new cluster is provisioned, the generated keypair should be backed up externally (i.e. to a shared VaultWarden/BitWarden collection). With the keypair backed up, secrets can be <a href="https://github.com/bitnami-labs/sealed-secrets#can-i-decrypt-my-secrets-offline-with-a-backup-key">decrypted locally</a> or <a href="https://github.com/bitnami-labs/sealed-secrets#can-i-bring-my-own-pre-generated-certificates">restored to a new cluster</a> in the future.</p>
-<h2 id="back-up-generated-keys">Back up generated keys<a class="headerlink" href="#back-up-generated-keys" title="Permanent link"> ¶</a></h2>
-<p><a href="https://github.com/bitnami-labs/sealed-secrets#can-i-decrypt-my-secrets-offline-with-a-backup-key">From the <code>sealed-secrets</code> README.md</a>:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-n<span class="w"> </span>sealed-secrets<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-l<span class="w"> </span>sealedsecrets.bitnami.com/sealed-secrets-key<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="se">\</span>
-&gt;<span class="w"> </span>cluster-sealed-secrets-master.key
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Sensitive data!</p>
-<p>Be sure to keep this file secure and delete from your working directory after uploading it to a secure credentials vault for backup.</p>
-<p><strong>Do not commit this file to source control</strong></p>
-</div>
-<h2 id="expose-the-public-certificate">Expose the public certificate<a class="headerlink" href="#expose-the-public-certificate" title="Permanent link"> ¶</a></h2>
-<p>The controller serves its public certificate at <code>/v1/cert.pem</code>, which local <code>kubeseal</code>
-clients can fetch instead of pulling it from the cluster each time. Expose it through the
-Gateway API — see <a href="../../../development/features/gateway/">Exposing services</a> for the full
-pattern and the ownership split.</p>
-<p>Provide a <code>Gateway</code> and an <code>HTTPRoute</code> (leave the chart&rsquo;s own <code>ingress</code> disabled):</p>
-<div class="tabbed-set" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">gateway.yaml</label><div class="tabbed-content">
+<h1 id="exposing-services-gateway-api">Exposing services (Gateway API)<a class="headerlink" href="#exposing-services-gateway-api" title="Permanent link"> ¶</a></h1>
+<p>Public services are exposed through <strong>Envoy Gateway</strong> and the Kubernetes <strong>Gateway API</strong>.
+This replaces the older ingress-nginx path (see <a href="#legacy-ingress-nginx">Legacy: ingress-nginx</a>).</p>
+<p>The design rests on one rule, and most of the sharp edges below are consequences of
+getting it wrong:</p>
+<blockquote>
+<p><strong>A cluster decides <em>where</em> a service is reachable. An application decides <em>what</em> it
+serves. Neither declares the other&rsquo;s half.</strong></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>The cluster owns</th>
+<th>The application owns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Gateway</code> — hostnames, TLS, certificate issuer, <code>gatewayClassName</code></td>
+<td><code>HTTPRoute</code> — paths, backend Services, ports</td>
+</tr>
+<tr>
+<td><code>GatewayClass</code>, the shared data plane, the HTTP→HTTPS redirect</td>
+<td>its own container ports and routing</td>
+</tr>
+</tbody>
+</table>
+<p>Hostnames, TLS, and issuers differ between clusters and are negotiated across every app
+sharing the ingress — they are cluster facts. Paths and ports change when the app changes
+and belong in the same commit as that change — they are app facts. An app cannot correctly
+author cluster facts: it doesn&rsquo;t know the cluster&rsquo;s issuer name, cert Secret names, or
+Gateway class, and guessing wrong fails in ways that are hard to see (see
+<a href="#failure-modes">Failure modes</a>).</p>
+<h2 id="exposing-a-service">Exposing a service<a class="headerlink" href="#exposing-a-service" title="Permanent link"> ¶</a></h2>
+<p><strong>1. The cluster provides a <code>Gateway</code> named after the app</strong>, in the app&rsquo;s namespace, with
+one HTTPS listener per hostname:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Gateway</span>
 <span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sealed-secrets</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sealed-secrets</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">cert-manager.io/cluster-issuer</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">letsencrypt-prod</span>
 <span class="nt">spec</span><span class="p">:</span>
@@ -1173,36 +1230,107 @@ pattern and the ownership split.</p>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https</span>
 <span class="w">      </span><span class="nt">protocol</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPS</span>
 <span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">443</span>
-<span class="w">      </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sealed-secrets.mycluster.k8s.example.net</span>
+<span class="w">      </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app.mycluster.k8s.example.net</span>
 <span class="w">      </span><span class="nt">tls</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terminate</span>
 <span class="w">        </span><span class="nt">certificateRefs</span><span class="p">:</span>
-<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sealed-secrets-gw-tls</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app-gw-tls</span><span class="w">        </span><span class="c1"># cert-manager creates this from the annotation</span>
 <span class="w">      </span><span class="nt">allowedRoutes</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">namespaces</span><span class="p">:</span>
 <span class="w">          </span><span class="nt">from</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Same</span>
-<span class="nn">---</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io/v1</span>
+</code></pre></div>
+<p>cert-manager sees the <code>cluster-issuer</code> annotation and issues the certificate into the
+<code>certificateRefs</code> Secret automatically. No <code>Certificate</code> resource is written by hand.</p>
+<p><strong>2. The application ships an <code>HTTPRoute</code></strong> that attaches to that Gateway by name and
+declares <strong>no hostnames</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gateway.networking.k8s.io/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HTTPRoute</span>
 <span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sealed-secrets</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sealed-secrets</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
 <span class="nt">spec</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">parentRefs</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sealed-secrets</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span><span class="w">          </span><span class="c1"># the Gateway the cluster provides</span>
+<span class="w">  </span><span class="c1"># no hostnames — inherited from the Gateway&#39;s listeners</span>
 <span class="w">  </span><span class="nt">rules</span><span class="p">:</span>
-<span class="w">    </span><span class="c1"># Only the public cert is served — not the whole controller surface.</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">matches</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">Exact</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="nv">/v1/cert.pem</span><span class="w"> </span><span class="p p-Indicator">}</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="nt"> type</span><span class="p">:</span><span class="w"> </span><span class="nv">PathPrefix</span><span class="p p-Indicator">,</span><span class="nt"> value</span><span class="p">:</span><span class="w"> </span><span class="nv">/</span><span class="w"> </span><span class="p p-Indicator">}</span>
 <span class="w">      </span><span class="nt">backendRefs</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sealed-secrets</span>
-<span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
+<span class="w">          </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span>
 </code></pre></div>
+<p>A route with no <code>hostnames</code> <strong>inherits</strong> them from the listeners it attaches to. So the
+same route file works unchanged in every environment — the Gateway supplies the hostname —
+and the app repo contains zero cluster facts. This is the mechanism that makes the
+ownership split practical; it is a supported part of the Gateway API and behaves correctly
+on Envoy Gateway.</p>
+<p>When an app team ships routes from their own repository, this is all they ship: an
+HTTPRoute, attached by convention to a Gateway named after the app.</p>
+<h2 id="http-https-and-certificates">HTTP, HTTPS, and certificates<a class="headerlink" href="#http-https-and-certificates" title="Permanent link"> ¶</a></h2>
+<ul>
+<li><strong>HTTP→HTTPS is handled once, globally.</strong> A single redirect <code>HTTPRoute</code> on the shared
+  HTTP listener 301s everything to HTTPS. Per-app HTTPRoutes attach only to their per-app
+  HTTPS Gateway — they do <strong>not</strong> each carry a redirect.</li>
+<li><strong>ACME challenges bypass the redirect automatically.</strong> cert-manager creates a short-lived
+  HTTPRoute per challenge with an <code>Exact</code> path match on <code>/.well-known/acme-challenge/…</code>,
+  which outranks the catch-all redirect under Gateway API precedence.</li>
+<li><strong>One LoadBalancer for all Gateways.</strong> The <code>EnvoyProxy</code> resource sets
+  <code>mergeGateways: true</code>, so every Gateway shares one Envoy data plane and one cloud
+  LoadBalancer. Without it, each Gateway provisions its own LB and cost multiplies. Do not
+  disable it.</li>
+</ul>
+<h2 id="failure-modes">Failure modes<a class="headerlink" href="#failure-modes" title="Permanent link"> ¶</a></h2>
+<p>These are not hypothetical — each one cost real time on a production cluster.</p>
+<div class="admonition danger">
+<p class="admonition-title">Certificate issuance depends on <strong>in-cluster</strong> reachability</p>
+<p>cert-manager runs an HTTP-01 self-check <em>from inside the cluster</em> before it asks the CA
+to validate. So a solver the cluster cannot reach from within will never issue a cert,
+even if it works perfectly from the public internet.</p>
+<p>This is what makes ingress-nginx-with-PROXY-protocol unusable for issuance once the
+in-cluster PROXY-header shim (hairpin-proxy) is removed: in-cluster traffic bypasses the
+load balancer that would add the header, so the backend drops the connection and the
+self-check fails silently. The general rule: <strong>a component in the request path that
+needs a header only the load balancer supplies is unreachable from inside the cluster.</strong>
+Envoy Gateway does not use PROXY protocol, so it is reachable in-cluster and its
+self-checks pass. Never enable <code>ClientTrafficPolicy.enableProxyProtocol</code> to recover
+client IPs without accounting for this.</p>
 </div>
+<div class="admonition danger">
+<p class="admonition-title">Don&rsquo;t leave gateway certs pending across a renewal window</p>
+<p>If you pre-create per-app Gateways (and their pending ACME challenges) but delay the DNS
+cutover, those challenges sit <code>pending</code> indefinitely. A pending challenge <strong>holds its
+hostname&rsquo;s slot</strong> in cert-manager&rsquo;s scheduler, which will not run two HTTP-01 challenges
+for the same hostname at once — so it can silently starve the <em>legacy</em> certificate&rsquo;s
+renewal for that same hostname. If you must pause mid-migration, remove the
+<code>cluster-issuer</code> annotation from the pre-created Gateways so no challenges exist to hold
+the slots.</p>
 </div>
-<p>Once deployed, local <code>kubeseal</code> clients can be configured to use it by setting the <code>SEALED_SECRETS_CERT</code> environment variable:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SEALED_SECRETS_CERT</span><span class="o">=</span>https://sealed-secrets.mycluster.k8s.example.net/v1/cert.pem
-</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">A Challenge can outlive its Order and deadlock renewals</p>
+<p>A cert-manager <code>Challenge</code> is owned by <strong>both</strong> its <code>Order</code> and the <code>ClusterIssuer</code>.
+Kubernetes garbage-collects a dependent only when <em>all</em> owners are gone, so a Challenge
+survives its Order&rsquo;s deletion as a half-orphan: still <code>processing</code>, no controller driving
+it, no GC path to remove it — and still holding its scheduler slot. Symptom:
+<code>kubectl get challenges -A</code> shows a challenge <code>pending</code> for days with a sibling for the
+same <code>dnsName</code> stuck with an empty status. Delete the stale one by name. The
+<code>CertChallengeStuck</code> alert (shipped with Grafana alerting) catches this.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title"><code>ListenerSet</code> is not usable yet</p>
+<p>Envoy Gateway before v1.8 does not reconcile <code>ListenerSet</code> — it watches <code>XListenerSet</code>
+and logs <code>XListenerSet CRD not found, skipping XListenerSet watch</code>. A <code>ListenerSet</code>
+applies cleanly to the API server and is then <strong>silently ignored</strong>, leaving the hostname
+with no listener and nothing in any log to say why. Use per-app <code>Gateway</code> resources with
+<code>mergeGateways: true</code> until the cluster&rsquo;s Envoy Gateway is on v1.8+.</p>
+</div>
+<h2 id="legacy-ingress-nginx">Legacy: ingress-nginx<a class="headerlink" href="#legacy-ingress-nginx" title="Permanent link"> ¶</a></h2>
+<p>ingress-nginx remains in the manifests for compatibility with services that haven&rsquo;t moved
+to the Gateway API yet, but it is being retired and <strong>new services should not use it</strong>.
+The old flow — an <code>Ingress</code> with <code>kubernetes.io/ingress.class: nginx</code> — still functions
+where it already exists. When migrating an existing Ingress, mirror its routing faithfully
+in the HTTPRoute: multi-path Ingresses (e.g. <code>/api</code> to a backend, <code>/</code> to a frontend) and
+redirect-only hosts must be reproduced as explicit HTTPRoute rules, or behavior changes
+silently at cutover.</p>
 
 
 

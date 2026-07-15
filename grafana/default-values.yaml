@@ -91,13 +91,16 @@ grafana.ini:
   smtp:
     enabled: true
     host: smtp.postmarkapp.com:587
+    # A generic fallback; each cluster overrides this with its own name via
+    # GF_SMTP_FROM_NAME (from the grafana-smtp Secret) so alert emails identify
+    # which cluster they came from. Grafana auto-maps GF_<SECTION>_<KEY> env vars
+    # onto grafana.ini and env wins over this file. from_address works the same
+    # way via GF_SMTP_FROM_ADDRESS.
     from_name: Cluster Monitoring
-    # from_address comes from GF_SMTP_FROM_ADDRESS below (Grafana auto-maps
-    # GF_<SECTION>_<KEY> env vars onto grafana.ini, and env wins over this file).
 
-# All four are `optional: true` so a cluster that hasn't created grafana-smtp
-# still boots Grafana — alerting simply doesn't deliver until the Secret exists,
-# rather than blocking the pod on a missing reference.
+# All `optional: true` so a cluster that hasn't created grafana-smtp still boots
+# Grafana — alerting simply doesn't deliver until the Secret exists, rather than
+# blocking the pod on a missing reference.
 envValueFrom:
   GF_SMTP_USER:
     secretKeyRef: { name: grafana-smtp, key: user, optional: true }
@@ -105,6 +108,9 @@ envValueFrom:
     secretKeyRef: { name: grafana-smtp, key: password, optional: true }
   GF_SMTP_FROM_ADDRESS:
     secretKeyRef: { name: grafana-smtp, key: from-address, optional: true }
+  # Names the sending cluster in alert emails, e.g. "CodeForPhilly Live".
+  GF_SMTP_FROM_NAME:
+    secretKeyRef: { name: grafana-smtp, key: from-name, optional: true }
   ALERT_EMAIL_TO:
     secretKeyRef: { name: grafana-smtp, key: recipients, optional: true }
 

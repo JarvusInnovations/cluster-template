@@ -22,26 +22,55 @@ kubectl get secret \
 
     **Do not commit this file to source control**
 
-## Enable ingress
+## Expose the public certificate
 
-The `sealed-secrets` helm chart includes an ingress that can be configured to provide a public URL to the cluster's public certificate that can be used for local `kubeseal` client operations.
+The controller serves its public certificate at `/v1/cert.pem`, which local `kubeseal`
+clients can fetch instead of pulling it from the cluster each time. Expose it through the
+Gateway API — see [Exposing services](../../development/features/gateway.md) for the full
+pattern and the ownership split.
 
-To enable the ingress, configure and deploy `sealed-secrets/release-values.yaml`:
+Provide a `Gateway` and an `HTTPRoute` (leave the chart's own `ingress` disabled):
 
-=== "sealed-secrets/release-values.yaml"
+=== "gateway.yaml"
 
     ```yaml
-    ingress:
-    enabled: true
-    annotations:
-        kubernetes.io/ingress.class: nginx
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: Gateway
+    metadata:
+      name: sealed-secrets
+      namespace: sealed-secrets
+      annotations:
         cert-manager.io/cluster-issuer: {{ cluster.cluster_issuer }}
-    hosts:
-        - sealed-secrets.{{ cluster.wildcard_hostname }}
-    tls:
-        - secretName: sealed-secrets-tls
-        hosts:
-            - sealed-secrets.{{ cluster.wildcard_hostname }}
+    spec:
+      gatewayClassName: eg
+      listeners:
+        - name: https
+          protocol: HTTPS
+          port: 443
+          hostname: sealed-secrets.{{ cluster.wildcard_hostname }}
+          tls:
+            mode: Terminate
+            certificateRefs:
+              - name: sealed-secrets-gw-tls
+          allowedRoutes:
+            namespaces:
+              from: Same
+    ---
+    apiVersion: gateway.networking.k8s.io/v1
+    kind: HTTPRoute
+    metadata:
+      name: sealed-secrets
+      namespace: sealed-secrets
+    spec:
+      parentRefs:
+        - name: sealed-secrets
+      rules:
+        # Only the public cert is served — not the whole controller surface.
+        - matches:
+            - path: { type: Exact, value: /v1/cert.pem }
+          backendRefs:
+            - name: sealed-secrets
+              port: 8080
     ```
 
 Once deployed, local `kubeseal` clients can be configured to use it by setting the `SEALED_SECRETS_CERT` environment variable:

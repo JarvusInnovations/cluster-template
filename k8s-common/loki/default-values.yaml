@@ -1,1 +1,6 @@
 # These values as applied first as template-provided defaults
+loki:
+  commonConfig:
+    replication_factor: 1
+  storage:
+    type: 'filesystem'
